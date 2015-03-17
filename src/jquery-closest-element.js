@@ -5,7 +5,7 @@
     selector = selector || (selector = 'div');
     options = $.extend({}, options, { container: 'body'});
 
-    var closest;
+    var closest = { el: '' };
 
     $(options.container).find(selector).each(function(i, el) {
       var offset = $(el).offset(),
