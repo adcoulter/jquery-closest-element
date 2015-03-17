@@ -9,5 +9,3 @@ $.closestElement([xCoordinate, yCoordinate], '#selector', options);
 
 Options:
 - container (default is 'body')
-
-Returns the closest element to given coordinates.
