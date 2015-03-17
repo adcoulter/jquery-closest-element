@@ -1,9 +1,8 @@
 (function ($, undefined) {
-  //todo: add options (container?)
-  $.closestElement = function (coords, selector, options) {
-    selector || (selector = 'div');
-    options || (options = {});
 
+  $.closestElement = function (coords, selector, options) {
+    //setup defaults
+    selector = selector || (selector = 'div');
     options = $.extend({}, options, { container: 'body'});
 
     var closest;
@@ -14,8 +13,8 @@
        y = coords.y - offset.top,
        dist = Math.sqrt((x*x) + (y*y));
 
-      if(i=== 0 || dist < closest.dist) {
-        closest = {  el: el, dist: dist };
+      if(!i || dist < closest.dist) {
+        closest = { el: el, dist: dist };
       }
     });
 
