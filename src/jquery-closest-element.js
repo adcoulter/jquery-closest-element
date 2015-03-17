@@ -9,8 +9,8 @@
 
     $(options.container).find(selector).each(function(i, el) {
       var offset = $(el).offset(),
-       x = coords.x - offset.left,
-       y = coords.y - offset.top,
+       x = coords[0] - offset.left,
+       y = coords[1] - offset.top,
        dist = Math.sqrt((x*x) + (y*y));
 
       if(!i || dist < closest.dist) {
